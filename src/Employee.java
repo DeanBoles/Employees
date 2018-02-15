@@ -6,7 +6,6 @@ public class Employee {
     private Double salary;
     private String gender;
 
-
     public Employee(final String name, final int age, final String designation, final Double salary, final String gender) {
         this.name = name;
         this.age = age;
@@ -15,46 +14,49 @@ public class Employee {
         this.gender = gender;
     }
 
-    public void empAge(final int empage) {
-        age = empage;
+    public String getName() {
+        return name;
     }
 
-    public void empDesignation(final String empdesig) {
-        designation = empdesig;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void empSalary(final Double empsalary) {
-        salary = empsalary;
+    public int getAge() {
+        return age;
     }
 
-    public String getName(){
-        return this.name;
-    }
-    public String getGender(){
-        return this.gender;
-    }
-    public double getSalary(){
-        return this.salary;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public int getAge(){
-        return this.age;
+    public String getDesignation() {
+        return designation;
     }
 
-    public String setTitiel(){
-        return "shoe";
+    public void setDesignation(String designation) {
+        this.designation = designation;
     }
 
-    public String getDesignation(){
-        return this.designation;
+    public Double getSalary() {
+        return salary;
     }
 
-    public void printEmployee() {
-        System.out.println("Name" + name);
-        System.out.println("Age" + age);
-        System.out.println("Designation" + designation);
-        System.out.println("Salary" + salary);
-        System.out.println("gender" + gender);
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Name:[%s]. Age:[%s], Designation[%s], Salary[%s], Gender[%s]", name, age, designation, salary, gender);
     }
 }
 

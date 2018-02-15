@@ -7,15 +7,11 @@ public class EmployeeTest {
     public static void main(String[] Args) {
 
         Employee empOne = new Employee("-Tom", 23, "-manager", 1000d, "male");
-        empOne.printEmployee();
+        empOne.toString();
         Employee empTwo = new Employee("-Mary", 30, "-Worker", 500d, "female");
-        empTwo.printEmployee();
+        empTwo.toString();
         Employee empThree = new Employee("-John", 35, "-Worker", 580d, "male");
-        empTwo.printEmployee();
-
-
-        // Convert this to a loop
-
+        empTwo.toString();
 
         List<Employee> employeelist = new ArrayList<>();
         employeelist.add(empOne);
@@ -24,19 +20,13 @@ public class EmployeeTest {
 
         for (Employee e : employeelist) {
             System.out.println("Employee Name is :" + e.getName());
-
-
         }
-
-
-
 
         double total = 0;
         double totalUnder30 = 0;
         double totalUnderman = 0;
         double totalUnderT = 0;
         double totalUndergen = 0;
-
 
         // add all all emp salaries :)
         for (Employee e : employeelist) {
@@ -57,32 +47,30 @@ public class EmployeeTest {
 
             }
         }
+
         // calculate emps that start with T
         for (Employee e : employeelist) {
             if (e.getName().startsWith("-T")) {
                 totalUnderT += e.getSalary();
+            } else {
+                System.out.println("No Employees start with T");
             }
-
         }
+
         for (Employee e : employeelist) {
             if (e.getGender().equals("female")) {
                 totalUndergen += e.getSalary();
             }
         }
 
-
-        //
         System.out.println("Total Salary: " + total);
         System.out.println("Total Salary under 30: " + totalUnder30);
         System.out.println("Total Salary under First letter T:" + totalUnderT);
         System.out.println("Total Salary under Manager:" + totalUnderman);
         System.out.println("Total Salary under Female:" + totalUndergen);
-        System.out.println("Total Annual Salary (including all employees):"+ total*12);
+        System.out.println(String.format("Total Annual Salary for [%s] employees: [%s]", employeelist.size(), total*12));
         //present better
         System.out.println("Employee:" + empOne.toString());
-
-
-
     }
 }
 
