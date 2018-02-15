@@ -29,8 +29,7 @@ public class EmployeeTest {
         }
 
 
-        System.out.println("Employees :");
-        System.out.println(employeelist);
+
 
         double total = 0;
         double totalUnder30 = 0;
@@ -73,13 +72,15 @@ public class EmployeeTest {
 
 
         //
-        System.out.println(empOne.toString());
         System.out.println("Total Salary: " + total);
         System.out.println("Total Salary under 30: " + totalUnder30);
         System.out.println("Total Salary under First letter T:" + totalUnderT);
         System.out.println("Total Salary under Manager:" + totalUnderman);
         System.out.println("Total Salary under Female:" + totalUndergen);
-        System.out.println("Total Annual Salary:"+ total*12);
+        System.out.println("Total Annual Salary (including all employees):"+ total*12);
+        //present better
+        System.out.println("Employee:" + empOne.toString());
+
 
 
     }
