@@ -6,11 +6,11 @@ public class EmployeeTest {
 
     public static void main(String[] Args) {
 
-        Employee empOne = new Employee("-Tom", 23, "-manager", 1000d, "male");
+        Employee empOne = new Employee("Tom", 23, "manager", 1000d, "male");
         empOne.toString();
-        Employee empTwo = new Employee("-Mary", 30, "-Worker", 500d, "female");
+        Employee empTwo = new Employee("Mary", 30, "worker", 500d, "female");
         empTwo.toString();
-        Employee empThree = new Employee("-John", 35, "-Worker", 580d, "male");
+        Employee empThree = new Employee("John", 35, "worker", 580d, "male");
         empTwo.toString();
 
         List<Employee> employeelist = new ArrayList<>();
@@ -37,29 +37,35 @@ public class EmployeeTest {
         for (Employee e : employeelist) {
             if (e.getAge() >= 30) {
                 totalUnder30 += e.getSalary();
+
             }
         }
 
         // calculate manager salaries
         for (Employee e : employeelist) {
-            if (e.getDesignation().equals("-manager")) {
+            if (e.getDesignation().equals("manager")) {
                 totalUnderman += e.getSalary();
+            }else{
+                System.out.println(String.format("Employee [%s] is not a manager but is a [%s]",e.getName(),e.getDesignation()));
+
 
             }
         }
 
         // calculate emps that start with T
         for (Employee e : employeelist) {
-            if (e.getName().startsWith("-T")) {
+            if (e.getName().startsWith("T")) {
                 totalUnderT += e.getSalary();
             } else {
-                System.out.println("No Employees start with T");
+                System.out.println(String.format("Employee [%s] does not start with T is starts with [%s]", e.getName(), e.getName().charAt(0)));
             }
         }
 
         for (Employee e : employeelist) {
             if (e.getGender().equals("female")) {
                 totalUndergen += e.getSalary();
+            }else{
+             System.out.println(String.format("Employee [%s] is not Female",e.getName()));
             }
         }
 
@@ -71,6 +77,8 @@ public class EmployeeTest {
         System.out.println(String.format("Total Annual Salary for [%s] employees: [%s]", employeelist.size(), total*12));
         //present better
         System.out.println("Employee:" + empOne.toString());
+        System.out.println("Employee" + empTwo.toString());
+        System.out.println("Employee" + empThree.toString());
     }
 }
 
