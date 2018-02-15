@@ -15,9 +15,6 @@ public class EmployeeTest {
 
 
         // Convert this to a loop
-        System.out.println();
-
-
 
 
         List<Employee> employeelist = new ArrayList<>();
@@ -30,7 +27,6 @@ public class EmployeeTest {
 
 
         }
-
 
 
         System.out.println("Employees :");
@@ -69,20 +65,23 @@ public class EmployeeTest {
             }
 
         }
-
         for (Employee e : employeelist) {
             if (e.getGender().equals("female")) {
                 totalUndergen += e.getSalary();
             }
         }
 
+
         //
         System.out.println(empOne.toString());
-        System.out.println("Total Salary: "+total);
-        System.out.println("Total Salary under 30: "+totalUnder30);
-        System.out.println("Total Salary under First letter T:"+totalUnderT);
-        System.out.println("Total Salary under Manager:"+totalUnderman);
-        System.out.println("Total Salary under Female:"+totalUndergen);
+        System.out.println("Total Salary: " + total);
+        System.out.println("Total Salary under 30: " + totalUnder30);
+        System.out.println("Total Salary under First letter T:" + totalUnderT);
+        System.out.println("Total Salary under Manager:" + totalUnderman);
+        System.out.println("Total Salary under Female:" + totalUndergen);
+        System.out.println("Total Annual Salary:"+ total*12);
+
+
     }
 }
 
