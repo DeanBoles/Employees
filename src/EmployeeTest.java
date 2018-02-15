@@ -13,16 +13,28 @@ public class EmployeeTest {
         Employee empThree = new Employee("-John", 35, "-Worker", 580d, "male");
         empTwo.printEmployee();
 
-        System.out.println("Employees");
-        System.out.println(empTwo.getName());
-        System.out.println(empOne.getName());
-        System.out.println(empThree.getName());
+
+        // Convert this to a loop
+        System.out.println();
+
+
 
 
         List<Employee> employeelist = new ArrayList<>();
         employeelist.add(empOne);
         employeelist.add(empTwo);
         employeelist.add(empThree);
+
+        for (Employee e : employeelist) {
+            System.out.println("Employee Name is :" + e.getName());
+
+
+        }
+
+
+
+        System.out.println("Employees :");
+        System.out.println(employeelist);
 
         double total = 0;
         double totalUnder30 = 0;
@@ -57,12 +69,14 @@ public class EmployeeTest {
             }
 
         }
-        //?? bonus :)
+
         for (Employee e : employeelist) {
             if (e.getGender().equals("female")) {
                 totalUndergen += e.getSalary();
             }
         }
+
+        //
         System.out.println(empOne.toString());
         System.out.println("Total Salary: "+total);
         System.out.println("Total Salary under 30: "+totalUnder30);
